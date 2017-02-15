@@ -10,7 +10,7 @@ https://docs.nativescript.org/ui/components.
     http://docs.nativescript.org/ui/action-bar
     -->
     <Page.actionBar>
-        <ActionBar title="Ezy Flight Nativescript" icon="" class="action-bar" horizontalAlignment="center">
+        <ActionBar title="Details" icon="" class="action-bar" horizontalAlignment="center">
         </ActionBar>
     </Page.actionBar>
     <!--
@@ -26,23 +26,11 @@ https://docs.nativescript.org/ui/components.
     -->
     <ScrollView>
          <StackLayout>
-        <Label text="Departure Airport" class="h3 text-center"/>
-    
-        <ListPicker row="1" class="picker" items="{{departureAirports}}" selectedIndex="{{depAirportIndex}}" propertyChange="{{depAirportChange}}">
-        </ListPicker>    
-
-        <Label text="Arrival Airport" class="h3 text-center"/>
-        <ListPicker row="1" class="picker" items="{{arrivalAirports}}">
-        </ListPicker>    
-
-        <Label text="Departure" class="h3 text-center"/>
-        <DatePicker date="{{departureDate}}" verticalAlignment="center" horizontalAlignment="center"/>
-    
-        <Label text="Arrival" class="h3 text-center"/>
-        <DatePicker date="{{arrivalDate}}" verticalAlignment="center" horizontalAlignment="center"/>
-    
-        <Button text="Search" tap="{{ onSearch }}" class="btn btn-primary btn-active"/>
-        
+        <Label text="Details" class="h3 text-center"/>
+        <Label text="{{depAirport}}" />
+        <Label text="{{arrAirport}}" />
+        <Label text="{{depDate}}" />
+        <Label text="{{arrDate}}" />
          </StackLayout>
     </ScrollView>
     
