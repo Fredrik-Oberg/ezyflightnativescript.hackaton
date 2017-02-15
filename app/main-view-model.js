@@ -1,24 +1,25 @@
+
+
 var Observable = require("data/observable").Observable;
 
 function getMessage(counter) {
-    if (counter <= 0) {
-        return "Hoorraaay! You unlocked the NativeScript clicker achievement!";
-    } else {
-        return counter + " taps left";
-    }
 }
 
-function createViewModel() {
+function createViewModel(page) {
     var viewModel = new Observable();
-    viewModel.counter = 42;
     viewModel.message = getMessage(viewModel.counter);
 
-    viewModel.onTap = function() {
-        this.counter--;
+    viewModel.onSearch = function() {
         this.set("message", getMessage(this.counter));
     }
+    viewModel.departureDate = new Date();
+    viewModel.arrivalDate = new Date();
 
     return viewModel;
 }
+
+exports.loaded = function(args) {
+    page = args.object;
+};
 
 exports.createViewModel = createViewModel;
